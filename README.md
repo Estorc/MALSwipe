@@ -44,8 +44,9 @@ Cela permet d'avoir un suivi structuré, cohérent et collaboratif du projet.
 ### Documentation IHM
 
 - **Personas** : Créé via Figma  
-  [Voir le Persona](https://www.figma.com/board/Suc8NyNFGz7882jYwIT5kg/User-persona--copie-?node-id=0-1&t=ZfciD5x3uHIO4sGG-1)
-- **Maquettes** : Créées via Figma *(lien à ajouter une fois finalisées)*
+  [Voir les Personas](https://www.figma.com/board/Suc8NyNFGz7882jYwIT5kg/User-persona--copie-?node-id=0-1&t=ZfciD5x3uHIO4sGG-1)
+- **Maquettes** : Créées via Figma
+  [Voir les Maquettes](https://www.figma.com/design/97hXPLAQJuwWRWf2HmbJw2/BakaSwipe?node-id=0-1&t=s4VVIqOTnAvuuSsQ-1)
 
 ### Documentation architecture
 
