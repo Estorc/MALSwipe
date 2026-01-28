@@ -30,14 +30,14 @@ Fonctionnalités principales :
 ## 🗂️ Organisation du projet
 
 Nous utilisons [Trello](https://trello.com/fr) pour centraliser toutes les informations et tâches liées au projet.  
-Cela permet d'avoir un suivi structure, cohérent et collaboratif du projet.
+Cela permet d'avoir un suivi structuré, cohérent et collaboratif du projet.
 
 ### Contenu du Trello
 
 - **TODO list** : Tâches à réaliser
 - **En cours** : Tâches en développement
 - **Terminées** : Tâches finalisées
-- **Documents IHM** : Persona et maquettes
+- **Documents IHM** : Personas et maquettes
 - **Documents d’architecture** : Schémas et tutoriels
 - **Sources** : Liens utiles et ressources
 
