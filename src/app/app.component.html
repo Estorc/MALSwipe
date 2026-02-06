@@ -11,10 +11,9 @@
 
 <div class="button-group">
   <input matInput placeholder="Anime Name" [(ngModel)]="animeName" />
-  <button mat-raised-button (click)="onConnectClick()">Connect</button>
-  <button mat-raised-button (click)="onSearchAnime()" *ngIf="sessionId">Search Anime</button>
-  <button mat-raised-button (click)="onHelloClick()">Hello</button>
+  <button mat-raised-button (click)="onSearchAnime()" *ngIf="isConnected()">Search Anime</button>
 </div>
+
 <div>
   <anime-card
     *ngFor="let anime of animes"

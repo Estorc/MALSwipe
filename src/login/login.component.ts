@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SessionService } from '../session/session.service'; // <- chemin CORRECT
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {}
+export class LoginComponent {
+  constructor(private session: SessionService) {}
+
+  onConnectClick() {
+    this.session.connect(); // doit compiler (connect existe dans le service)
+  }
+}

@@ -4,6 +4,7 @@ import { MatCardModule } from "@angular/material/card";
 
 @Component({
   selector: 'anime-card',
+  standalone: true,
   imports: [MatButtonModule, MatCardModule],
   templateUrl: './anime-card.component.html',
   styleUrl: './anime-card.component.scss'
