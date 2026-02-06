@@ -1,0 +1,30 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40%;
+  background: #ffffff;
+}
+
+.btn {
+  background: #59CCD9;
+  color: #F2F2F2;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 250%;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #3c8a92;
+}
+
+.logo {
+  display: block;
+  margin: auto; 
+  margin-top: 10%;
+  width: 90%;     
+  height: auto;  
+  border-radius: 50px;  
+}
