@@ -1,0 +1,23 @@
+.menu {
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+}
+
+.menu a.active {
+  font-weight: bold;
+  color: blue;
+}
