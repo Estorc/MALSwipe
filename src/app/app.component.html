@@ -1,5 +1,18 @@
-<button (click)="goTo('login')">Login</button>
-<button (click)="goTo('swipe')">Swipe</button>
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item (click)="goTo('login')">
+    Login
+  </button>
+
+  <button mat-menu-item (click)="goTo('swipe')">
+    Swipe
+  </button>
+</mat-menu>
+
+<button
+  mat-icon-button
+  class="menu-button"
+  [matMenuTriggerFor]="appMenu">
+  <mat-icon>menu</mat-icon>
+</button>
 
 <router-outlet></router-outlet>
-

@@ -1,13 +1,23 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router'; // <-- IMPORTANT
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
+
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet], // <-- c’est ça qu’on met pour router-outlet
-  templateUrl: './app.component.html'
+  imports: [
+    RouterOutlet,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule
+  ],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'] 
 })
+
 export class AppComponent {
   constructor(private router: Router) {}
 
