@@ -1,18 +1,13 @@
 
 import { NgFor, NgIf } from '@angular/common';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AnimeCardComponent } from '../anime-card/anime-card.component';
-
-import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 
 export interface SearchOptions {
     q?: string;
@@ -21,6 +16,7 @@ export interface SearchOptions {
     fields?: string[];
 }
 
+const SERVER_IP = "decimally-ungummed-benito.ngrok-free.dev";
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -36,6 +32,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   @ViewChild('log') logElement!: { nativeElement: HTMLParagraphElement };
+  
   title = 'BakaSwipe';
   animeName: string = '';
   animes: any[] = [];
@@ -63,7 +60,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   onHelloClick(): void {
-    fetch('http://localhost:3000/hello')
+    fetch(`https://${SERVER_IP}/hello`)
       .then(response => response.json())
       .then(data => this.logElement.nativeElement.textContent += data.message + '\n')
       .catch(error => console.error('Error:', error));
@@ -77,7 +74,7 @@ export class AppComponent implements AfterViewInit {
         return;
       }
       try {
-        await fetch('http://localhost:3000/session-exists', {
+        await fetch(`https://${SERVER_IP}/session-exists`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -106,7 +103,7 @@ export class AppComponent implements AfterViewInit {
 
   async createSession(): Promise<void> {
     return new Promise(async (resolve, reject) => {
-      await fetch('http://localhost:3000/create-session', {
+      await fetch(`https://${SERVER_IP}/create-session`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -132,12 +129,12 @@ export class AppComponent implements AfterViewInit {
       if (!await this.checkSession(this.sessionId)) {
         await this.createSession();
       }
-      const res = await fetch('http://localhost:3000/connect', {
+      const res = await fetch(`https://${SERVER_IP}/connect`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ sessionId: this.sessionId })
+        body: JSON.stringify({ sessionId: this.sessionId, redirect_uri: `https://${SERVER_IP}/callback` })
       })
       const reader = res?.body?.getReader();
       if (!reader) {
@@ -177,7 +174,7 @@ export class AppComponent implements AfterViewInit {
         return;
       }
       const options : SearchOptions = { q: this.animeName, limit: 5 };
-      await fetch('http://localhost:3000/search-anime', {
+      await fetch(`https://${SERVER_IP}/search-anime`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
