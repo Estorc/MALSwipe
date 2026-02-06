@@ -27,9 +27,6 @@ const SERVER_IP = "decimally-ungummed-benito.ngrok-free.dev";
 export class AppComponent implements AfterViewInit {
   constructor(private router: Router) {}
 
-  goTo(page: string) {
-    this.router.navigate([page]);
-  }
 
   @ViewChild('log') logElement!: { nativeElement: HTMLParagraphElement };
   
